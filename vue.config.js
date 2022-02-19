@@ -10,6 +10,7 @@ exports.chainWebpack = (webpackConfig) => {
   if (!process.env.SSR) {
     return;
   }
+  webpackConfig.entry("app").clear().add("./src/main.server.js");
   webpackConfig.target("node");
   webpackConfig.output.libraryTarget("commonjs2");
   webpackConfig.plugin("manifest").use(

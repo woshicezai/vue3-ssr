@@ -1,13 +1,22 @@
+const path = require("path");
 const express = require("express");
+const { createSSRApp } = require("vue");
+const { renderToString } = require("@vue/server-renderer");
+const manifest = require("../dist/ssr-manifest.json");
+
+const appPath = path.join(__dirname, "../dist", manifest["app.js"]);
+const App = require(appPath).default;
 
 const server = express();
 
-server.get("*", (req, res) => {
+server.get("*", async (req, res) => {
+  const app = createSSRApp(App);
+  const appContent = await renderToString(app);
   const html = `
         <html>
             <head></head>
             <body>
-                <h1>hello everyone</h1>
+             ${appContent}
             </body>
         </html>
     `;

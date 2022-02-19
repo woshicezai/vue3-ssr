@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@vue/server-renderer": "^3.2.31",
     "core-js": "^3.8.3",
     "express": "^4.17.3",
     "vue": "^3.2.13",
