@@ -27,14 +27,34 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <h3 @click="alertHello">alert现在时间:{{currentTime}}</h3>
   </div>
 </template>
 
 <script>
+import dayjs from 'dayjs';
+// import utils from '../utils/index'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data(){
+    return {
+       currentTime:dayjs().format('YYYY-MM-DD')
+      }
+  },
+  beforeCreate(){
+    console.error('beforeCreate')
+  },
+  mounted(){
+    console.error('mounted')
+    },
+  methods:{
+  alertHello(){
+    alert('hello')
+  }
   }
 }
 </script>
