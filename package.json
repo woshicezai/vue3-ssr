@@ -6,7 +6,7 @@
     "build:client": "vue-cli-service build",
     "build:server": "SSR=1 vue-cli-service build",
     "build": "npm run build:client && npm run build:server",
-    "dev":"node src/server.js",
+    "dev": "node src/server.js",
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint"
   },
@@ -15,6 +15,7 @@
     "core-js": "^3.8.3",
     "dayjs": "^1.10.7",
     "express": "^4.17.3",
+    "pinia": "^2.0.11",
     "vue": "^3.2.13",
     "webpack-manifest-plugin": "^4.1.1",
     "webpack-node-externals": "^3.0.0"

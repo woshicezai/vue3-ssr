@@ -1,4 +1,7 @@
 import { createSSRApp } from "vue";
+import { createPinia } from "pinia";
 import App from "./App.vue";
 
-createSSRApp(App).mount("#app");
+const app = createSSRApp(App);
+app.use(createPinia());
+app.mount("#app");
